@@ -4,99 +4,160 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ashish Joy - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #1f1c2c, #928dab);
+      color: #f4f4f4;
       line-height: 1.6;
-      max-width: 960px;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
       margin: auto;
-      background: #f9f9f9;
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
+
     h1, h2 {
-      color: #333;
+      color: #fff;
+      margin-bottom: 10px;
     }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      border-left: 4px solid #00ffcc;
+      padding-left: 10px;
+      font-size: 1.5rem;
+    }
+
+    p, li {
+      font-size: 1rem;
+      color: #e0e0e0;
+    }
+
+    ul {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    .info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #00ffd9;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+
+    a:hover {
+      color: #ff47e0;
+    }
+
     .section {
       margin-bottom: 30px;
+      transition: transform 0.3s;
     }
-    ul {
-      padding-left: 20px;
+
+    .section:hover {
+      transform: translateY(-2px);
     }
-    a {
-      color: #0077cc;
-      text-decoration: none;
+
+    .highlight {
+      color: #00ffd9;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>Ashish Joy Jonnakuti</h1>
-  <p><strong>Email:</strong> ashishjoyenjoy@gmail.com | <strong>Phone:</strong> 9877368015</p>
-  <p><a href="https://www.linkedin.com/in/ashish-joy-7a3323229/" target="_blank">LinkedIn</a> | 
-     <a href="https://github.com/JOY2004" target="_blank">GitHub</a></p>
+  <div class="container">
+    <h1>Ashish Joy Jonnakuti</h1>
+    <div class="info">
+      <p><span class="highlight">Email:</span> ashishjoyenjoy@gmail.com | <span class="highlight">Phone:</span> 9877368015</p>
+      <p>
+        <a href="https://linkedin.com/in/ashish-joy-7a3323229" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/JOY2004" target="_blank">GitHub</a>
+      </p>
+    </div>
 
-  <div class="section">
-    <h2>Profile</h2>
-    <p>
-      I am a student at IIIT Dharwad, passionate about software development, especially in web development, testing, and machine learning. I enjoy learning, collaborating, and contributing to challenging tech environments.
-    </p>
-  </div>
+    <div class="section">
+      <h2>💡 Profile</h2>
+      <p>IIIT Dharwad student with a fire for software and web development, NLP, and ML. Fast learner, team player, and always game for new challenges. 💪</p>
+    </div>
 
-  <div class="section">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>Programming: C/C++, Python</li>
-      <li>Frontend: HTML, CSS, JavaScript</li>
-      <li>Database: MySQL</li>
-      <li>Tools: Git, Docker, Postman</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>⚙️ Technical Skills</h2>
+      <ul>
+        <li>Programming: C/C++, Python</li>
+        <li>Frontend: HTML, CSS, JavaScript</li>
+        <li>Database: MySQL</li>
+        <li>Tools: Git, Docker, Postman</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Non-Technical Skills</h2>
-    <ul>
-      <li>Exceptional communication (written and verbal)</li>
-      <li>Confident presenter</li>
-      <li>Fluent in English, Hindi, Telugu, and Kannada</li>
-      <li>Soft Skills: Teamwork, communication, time management</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>🧠 Non-Technical Skills</h2>
+      <ul>
+        <li>Crystal-clear communicator and confident presenter</li>
+        <li>Multilingual: English, Hindi, Telugu, Kannada</li>
+        <li>Teamwork, time management, and soft skills game is strong</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>NLP Web App</strong> – Used Flask and LLMs like BART, Google Translate for summarization and translation.</li>
-      <li><strong>Rental Management System</strong> – GUI and DBMS project using Python Tkinter and MySQL.</li>
-      <li><strong>Secure File Sharing</strong> – Implemented AES and Diffie-Hellman-based encryption.</li>
-      <li><strong>Literature Research Chat App</strong> – Built a chatbot using RAG and fine-tuned embeddings for precise research query responses.</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>🚀 Projects</h2>
+      <ul>
+        <li><strong>NLP Web App:</strong> Used Flask + LLMs for summarization and translation</li>
+        <li><strong>Rental Management System:</strong> GUI and DB system using Python & MySQL</li>
+        <li><strong>Secure File Sharing:</strong> AES + Diffie-Hellman encryption</li>
+        <li><strong>Research Chatbot:</strong> RAG-based app to dig through academic PDFs</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Education</h2>
-    <ul>
-      <li>IIIT Dharwad – B.Tech CSE (2021–Present) | CPI: 5</li>
-      <li>KV No.2 Indore – Higher Secondary (75%)</li>
-      <li>KV No.2 Indore – Secondary (73%)</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>🎓 Education</h2>
+      <ul>
+        <li>IIIT Dharwad – B.Tech CSE (2021–Now) | CPI: 5</li>
+        <li>KV No.2 Indore – HSC: 75%, SSC: 73%</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Relevant Courses</h2>
-    <ul>
-      <li>Core: DSA, OOP, OS, DBMS, CN, SE, Cryptography, ML, NLP</li>
-      <li>Math: Calculus, Probability, Discrete Math, Linear Algebra, Statistics</li>
-    </ul>
-  </div>
+    <div class="section">
+      <h2>📚 Courses</h2>
+      <ul>
+        <li>Core: DSA, OOP, OS, DBMS, CN, SE, Cryptography, ML, NLP</li>
+        <li>Maths: Calculus, Discrete Math, Probability, Linear Algebra, Stats</li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>TATA Motors, Dharwad</strong> – AI/ML Intern (Jan 2025 – Present)<br>
-        Emotion detection project for plant workforce using full-stack AI.
-      </li>
-      <li><strong>HR Conclave 2024</strong> – Core team, PR and Sponsorship, Delegate PoC</li>
-      <li><strong>RUSH E-Sports Tournament</strong> – Event Lead, 600+ participants</li>
-    </ul>
+    <div class="section">
+      <h2>💼 Experience</h2>
+      <ul>
+        <li><strong>AI/ML Intern @ Tata Motors</strong> (Jan 2025 – Now)<br>
+        Working on emotion detection app for employee well-being. Full-stack ML vibes.</li>
+        <li><strong>HR Conclave 2024:</strong> Core PR team, Sponsor manager, Delegate PoC</li>
+        <li><strong>RUSH Esports:</strong> Event lead with 600+ banger participation</li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>
