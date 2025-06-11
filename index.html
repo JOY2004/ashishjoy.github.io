@@ -1,163 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ashish Joy - Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish Joy Jonnakuti - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #1f1c2c, #928dab);
-      color: #f4f4f4;
-      line-height: 1.6;
-      padding: 40px 20px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
 
-    h1, h2 {
-      color: #fff;
-      margin-bottom: 10px;
-    }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
 
-    h2 {
-      margin-top: 30px;
-      border-left: 4px solid #00ffcc;
-      padding-left: 10px;
-      font-size: 1.5rem;
-    }
+        .header .location {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
 
-    p, li {
-      font-size: 1rem;
-      color: #e0e0e0;
-    }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
 
-    ul {
-      margin-top: 10px;
-      margin-left: 20px;
-    }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
 
-    .info {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+        .contact-item:hover {
+            opacity: 0.8;
+        }
 
-    a {
-      color: #00ffd9;
-      text-decoration: none;
-      margin: 0 10px;
-      transition: all 0.3s;
-    }
+        .content {
+            padding: 40px;
+        }
 
-    a:hover {
-      color: #ff47e0;
-    }
+        .section {
+            margin-bottom: 40px;
+        }
 
-    .section {
-      margin-bottom: 30px;
-      transition: transform 0.3s;
-    }
+        .section h2 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            position: relative;
+        }
 
-    .section:hover {
-      transform: translateY(-2px);
-    }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #764ba2;
+        }
 
-    .highlight {
-      color: #00ffd9;
-      font-weight: bold;
-    }
-  </style>
+        .profile-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+        }
+
+        .project {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .project h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .project .tech-stack {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .project ul {
+            margin-left: 20px;
+        }
+
+        .project li {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .education-item, .experience-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .education-item h3, .experience-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .institution, .company {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .grade {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-item li {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .course-category h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .course-list {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .header {
+                background: #667eea !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Ashish Joy Jonnakuti</h1>
-    <div class="info">
-      <p><span class="highlight">Email:</span> ashishjoyenjoy@gmail.com | <span class="highlight">Phone:</span> 9877368015</p>
-      <p>
-        <a href="https://linkedin.com/in/ashish-joy-7a3323229" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/JOY2004" target="_blank">GitHub</a>
-      </p>
-    </div>
+    <div class="container">
+        <header class="header">
+            <h1>Ashish Joy Jonnakuti</h1>
+            <div class="location">Dharwad, Karnataka, India</div>
+            <div class="contact-info">
+                <a href="tel:+919877368015" class="contact-item">
+                    <span>📞</span>
+                    <span>+91 9877368015</span>
+                </a>
+                <a href="mailto:ashishjoyenjoy@gmail.com" class="contact-item">
+                    <span>✉️</span>
+                    <span>ashishjoyenjoy@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/your-profile" class="contact-item">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/your-username" class="contact-item">
+                    <span>🔗</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </header>
 
-    <div class="section">
-      <h2>💡 Profile</h2>
-      <p>IIIT Dharwad student with a fire for software and web development, NLP, and ML. Fast learner, team player, and always game for new challenges. 💪</p>
-    </div>
+        <main class="content">
+            <section class="section">
+                <h2>Profile</h2>
+                <p class="profile-text">
+                    I am a college student at IIIT Dharwad with a strong passion for software development, particularly in web development and testing. I am eager to learn, constantly improve my skills, and I am highly interested in contributing to machine learning. With excellent communication and management abilities, I can work in collaborative environments and take on new challenges.
+                </p>
+            </section>
 
-    <div class="section">
-      <h2>⚙️ Technical Skills</h2>
-      <ul>
-        <li>Programming: C/C++, Python</li>
-        <li>Frontend: HTML, CSS, JavaScript</li>
-        <li>Database: MySQL</li>
-        <li>Tools: Git, Docker, Postman</li>
-      </ul>
-    </div>
+            <section class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul class="skill-list">
+                            <li>C/C++</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <ul class="skill-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Database</h3>
+                        <ul class="skill-list">
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <ul class="skill-list">
+                            <li>Git</li>
+                            <li>Docker</li>
+                            <li>Postman</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <div class="section">
-      <h2>🧠 Non-Technical Skills</h2>
-      <ul>
-        <li>Crystal-clear communicator and confident presenter</li>
-        <li>Multilingual: English, Hindi, Telugu, Kannada</li>
-        <li>Teamwork, time management, and soft skills game is strong</li>
-      </ul>
-    </div>
+            <section class="section">
+                <h2>Non-Technical Skills</h2>
+                <ul class="skill-list">
+                    <li><strong>Exceptional Communication:</strong> Skilled in conveying ideas clearly in multiple languages.</li>
+                    <li><strong>Confident Presenter:</strong> Excellent presentation skills with no stage fear.</li>
+                    <li><strong>Multilingual Proficiency:</strong> Fluent in English, Hindi, Telugu, Kannada.</li>
+                    <li><strong>Soft Skills:</strong> Teamwork, communication, time management.</li>
+                </ul>
+            </section>
 
-    <div class="section">
-      <h2>🚀 Projects</h2>
-      <ul>
-        <li><strong>NLP Web App:</strong> Used Flask + LLMs for summarization and translation</li>
-        <li><strong>Rental Management System:</strong> GUI and DB system using Python & MySQL</li>
-        <li><strong>Secure File Sharing:</strong> AES + Diffie-Hellman encryption</li>
-        <li><strong>Research Chatbot:</strong> RAG-based app to dig through academic PDFs</li>
-      </ul>
-    </div>
+            <section class="section">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>AI/ML Intern</h3>
+                    <div class="company">TATA MOTORS, Dharwad</div>
+                    <div class="date">Jan. 2025 – Present</div>
+                    <ul>
+                        <li>Developing an emotion detection application for employee well-being at the plant.</li>
+                        <li>Full-stack development project for monitoring plant manufacturing progress.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Core Team Member, PR and Sponsorship Coordinator</h3>
+                    <div class="company">HR Conclave 2024, IIIT Dharwad</div>
+                    <ul>
+                        <li>Served as Student Point of Contact for HR delegates.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Event Lead</h3>
+                    <div class="company">RUSH E-sports Tournament, IIIT Dharwad</div>
+                    <ul>
+                        <li>Planned and executed the event involving 600+ participants.</li>
+                    </ul>
+                </div>
+            </section>
 
-    <div class="section">
-      <h2>🎓 Education</h2>
-      <ul>
-        <li>IIIT Dharwad – B.Tech CSE (2021–Now) | CPI: 5</li>
-        <li>KV No.2 Indore – HSC: 75%, SSC: 73%</li>
-      </ul>
-    </div>
+            <section class="section">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>Natural Language Processing Web Application</h3>
+                    <div class="tech-stack">Flask, HTML, CSS</div>
+                    <ul>
+                        <li>Integrated pre-trained LLMs (BART Extractive Summarizer, Google Translate) into a web app for summarization, translation, and PDF data analysis.</li>
+                        <li>Gained experience in NLP, web development frameworks, and LLM integration.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Rental Management System</h3>
+                    <div class="tech-stack">Python, MySQL, Tkinter</div>
+                    <ul>
+                        <li>Designed a DBMS for rental properties using MySQL and a Tkinter GUI for data entry and retrieval.</li>
+                        <li>Strengthened skills in database design, Python, and GUI development.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Secure File Sharing System</h3>
+                    <div class="tech-stack">Python</div>
+                    <ul>
+                        <li>Implemented file encryption/decryption using AES and Diffie-Hellman algorithms.</li>
+                        <li>Gained practical knowledge of cryptography for real-world security applications.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Literature Research Chat Application</h3>
+                    <div class="tech-stack">RAG, NLP</div>
+                    <ul>
+                        <li>Built a chatbot using Retrieval-Augmented Generation to search across research papers and folders, providing accurate topic-specific responses.</li>
+                    </ul>
+                </div>
+            </section>
 
-    <div class="section">
-      <h2>📚 Courses</h2>
-      <ul>
-        <li>Core: DSA, OOP, OS, DBMS, CN, SE, Cryptography, ML, NLP</li>
-        <li>Maths: Calculus, Discrete Math, Probability, Linear Algebra, Stats</li>
-      </ul>
-    </div>
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>B.Tech in Computer Science and Engineering</h3>
+                    <div class="institution">Indian Institute of Information Technology (IIIT), Dharwad</div>
+                    <div class="date">Nov. 2021 – Present</div>
+                    <div class="grade">CPI: 6</div>
+                </div>
+                <div class="education-item">
+                    <h3>Higher Secondary Education</h3>
+                    <div class="institution">Kendriya Vidyalaya No.2, Indore</div>
+                    <div class="date">2021</div>
+                    <div class="grade">Percentage: 75%</div>
+                </div>
+                <div class="education-item">
+                    <h3>Secondary Education</h3>
+                    <div class="institution">Kendriya Vidyalaya No.2, Indore</div>
+                    <div class="date">2019</div>
+                    <div class="grade">Percentage: 73%</div>
+                </div>
+            </section>
 
-    <div class="section">
-      <h2>💼 Experience</h2>
-      <ul>
-        <li><strong>AI/ML Intern @ Tata Motors</strong> (Jan 2025 – Now)<br>
-        Working on emotion detection app for employee well-being. Full-stack ML vibes.</li>
-        <li><strong>HR Conclave 2024:</strong> Core PR team, Sponsor manager, Delegate PoC</li>
-        <li><strong>RUSH Esports:</strong> Event lead with 600+ banger participation</li>
-      </ul>
+            <section class="section">
+                <h2>Courses</h2>
+                <div class="courses">
+                    <div class="course-category">
+                        <h3>Core</h3>
+                        <div class="course-list">
+                            Data Structures and Algorithms, OOP, Operating Systems, DBMS, Computer Networks, Software Engineering, Cryptography, Machine Learning, NLP
+                        </div>
+                    </div>
+                    <div class="course-category">
+                        <h3>Mathematics</h3>
+                        <div class="course-list">
+                            Calculus, Probability, Discrete Mathematics, Linear Algebra, Statistics
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-  </div>
 </body>
 </html>
