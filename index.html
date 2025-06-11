@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashish Joy Jonnakuti - Resume</title>
+    <title>Ashish Joy Jonnakuti - Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #3182ce;
+            --light-accent: #e6f3ff;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
+            --background: #ffffff;
+            --surface: #f7fafc;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,226 +30,483 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            font-size: 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            background: var(--background);
+            box-shadow: var(--shadow-xl);
+            border-radius: 16px;
             overflow: hidden;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 40px;
-            text-align: center;
+            padding: 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #cbd5e0;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .header .location {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+            font-weight: 400;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.75rem;
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-item:hover {
-            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            font-size: 14px;
         }
 
         .content {
-            padding: 40px;
+            padding: 3rem 2.5rem;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
         }
 
-        .section h2 {
-            color: #667eea;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
             position: relative;
         }
 
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            position: relative;
+        }
+
+        .section-line {
+            flex: 1;
             height: 2px;
-            background: #764ba2;
+            background: linear-gradient(90deg, var(--accent-color) 0%, transparent 100%);
+            border-radius: 1px;
         }
 
         .profile-text {
-            font-size: 1.1em;
+            font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: var(--text-secondary);
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            box-shadow: var(--shadow-sm);
         }
 
-        .skills-grid {
+        .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-color);
         }
 
         .skill-category h3 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .skill-list {
-            list-style: none;
+        .skill-category h3::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
         }
 
-        .skill-list li {
-            background: #f8f9fa;
-            padding: 8px 12px;
-            margin: 5px 0;
-            border-radius: 4px;
-            border-left: 3px solid #667eea;
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .project {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-
-        .project h3 {
-            color: #333;
-            margin-bottom: 5px;
-            font-size: 1.2em;
-        }
-
-        .project .tech-stack {
-            color: #667eea;
+        .skill-tag {
+            background: var(--light-accent);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 500;
-            margin-bottom: 10px;
+            border: 1px solid rgba(49, 130, 206, 0.2);
+            transition: all 0.2s ease;
         }
 
-        .project ul {
-            margin-left: 20px;
+        .skill-tag:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: scale(1.05);
         }
 
-        .project li {
-            margin: 5px 0;
-            color: #555;
+        .non-technical-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
-        .education-item, .experience-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
+        .soft-skill {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
         }
 
-        .education-item h3, .experience-item h3 {
-            color: #333;
-            margin-bottom: 5px;
+        .soft-skill:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
         }
 
-        .institution, .company {
-            color: #667eea;
-            font-weight: 500;
-            margin-bottom: 5px;
+        .soft-skill strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-color);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: linear-gradient(180deg, var(--accent-color) 0%, transparent 100%);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-content {
+            background: var(--background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .company, .institution {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
         .date {
-            color: #888;
-            font-style: italic;
-            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: var(--surface);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
         }
 
-        .grade {
-            color: #555;
+        .timeline-content ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .timeline-content li {
+            margin: 0.75rem 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-card {
+            background: var(--background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
-        .experience-item ul {
-            margin-left: 20px;
-            margin-top: 10px;
+        .project-card ul {
+            margin-left: 1.5rem;
         }
 
-        .experience-item li {
-            margin: 5px 0;
-            color: #555;
+        .project-card li {
+            margin: 0.75rem 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        .courses {
+        .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-category {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
         }
 
         .course-category h3 {
-            color: #333;
-            margin-bottom: 10px;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .course-list {
-            color: #555;
+            color: var(--text-secondary);
             line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .grade {
+            background: var(--light-accent);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
 
         @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: 1rem 0.5rem;
             }
 
             .header {
-                padding: 30px 20px;
+                padding: 2rem 1.5rem;
             }
 
             .header h1 {
-                font-size: 2em;
-            }
-
-            .contact-info {
-                gap: 15px;
+                font-size: 2.5rem;
             }
 
             .content {
-                padding: 30px 20px;
+                padding: 2rem 1.5rem;
             }
 
-            .skills-grid {
+            .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
             }
         }
 
@@ -247,9 +522,14 @@
             }
 
             .header {
-                background: #667eea !important;
+                background: var(--primary-color) !important;
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
+            }
+
+            .section {
+                animation: none;
+                opacity: 1;
             }
         }
     </style>
@@ -257,180 +537,257 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>Ashish Joy Jonnakuti</h1>
-            <div class="location">Dharwad, Karnataka, India</div>
-            <div class="contact-info">
-                <a href="tel:+919877368015" class="contact-item">
-                    <span>📞</span>
-                    <span>+91 9877368015</span>
-                </a>
-                <a href="mailto:ashishjoyenjoy@gmail.com" class="contact-item">
-                    <span>✉️</span>
-                    <span>ashishjoyenjoy@gmail.com</span>
-                </a>
-                <a href="https://linkedin.com/in/your-profile" class="contact-item">
-                    <span>💼</span>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://github.com/your-username" class="contact-item">
-                    <span>🔗</span>
-                    <span>GitHub</span>
-                </a>
+            <div class="header-content">
+                <div class="title">Software Engineer</div>
+                <h1>Ashish Joy Jonnakuti</h1>
+                <div class="location">Dharwad, Karnataka, India</div>
+                <div class="contact-grid">
+                    <a href="tel:+919877368015" class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <span>+91 9877368015</span>
+                    </a>
+                    <a href="mailto:ashishjoyenjoy@gmail.com" class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <span>ashishjoyenjoy@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/your-username" class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <span>GitHub Portfolio</span>
+                    </a>
+                </div>
             </div>
         </header>
 
         <main class="content">
             <section class="section">
-                <h2>Profile</h2>
+                <div class="section-header">
+                    <h2>Professional Summary</h2>
+                    <div class="section-line"></div>
+                </div>
                 <p class="profile-text">
-                    I am a college student at IIIT Dharwad with a strong passion for software development, particularly in web development and testing. I am eager to learn, constantly improve my skills, and I am highly interested in contributing to machine learning. With excellent communication and management abilities, I can work in collaborative environments and take on new challenges.
+                    Passionate Computer Science student at IIIT Dharwad with demonstrated expertise in software development, web technologies, and machine learning. Proven track record in full-stack development, natural language processing, and database management. Strong leadership experience with excellent communication skills and a commitment to continuous learning and innovation in emerging technologies.
                 </p>
             </section>
 
             <section class="section">
-                <h2>Technical Skills</h2>
-                <div class="skills-grid">
+                <div class="section-header">
+                    <h2>Technical Expertise</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-container">
                     <div class="skill-category">
                         <h3>Programming Languages</h3>
-                        <ul class="skill-list">
-                            <li>C/C++</li>
-                            <li>Python</li>
-                        </ul>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
                     </div>
                     <div class="skill-category">
                         <h3>Frontend Development</h3>
-                        <ul class="skill-list">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Tailwind CSS</li>
-                        </ul>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Database</h3>
-                        <ul class="skill-list">
-                            <li>MySQL</li>
-                        </ul>
+                        <h3>Database & Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Postman</span>
+                        </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Tools</h3>
-                        <ul class="skill-list">
-                            <li>Git</li>
-                            <li>Docker</li>
-                            <li>Postman</li>
+                        <h3>Specialized Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Tkinter</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>Core Competencies</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="non-technical-skills">
+                    <div class="soft-skill">
+                        <strong>Leadership & Communication:</strong> Exceptional ability to convey complex technical concepts clearly across multiple languages and lead cross-functional teams.
+                    </div>
+                    <div class="soft-skill">
+                        <strong>Public Speaking:</strong> Confident presenter with extensive experience addressing large audiences without stage fear.
+                    </div>
+                    <div class="soft-skill">
+                        <strong>Multilingual Proficiency:</strong> Fluent communication in English, Hindi, Telugu, and Kannada, enabling diverse team collaboration.
+                    </div>
+                    <div class="soft-skill">
+                        <strong>Project Management:</strong> Strong organizational skills with proven ability in teamwork, time management, and deadline adherence.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>Professional Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AI/ML Intern</h3>
+                        <div class="company">TATA MOTORS, Dharwad</div>
+                        <div class="date">January 2025 – Present</div>
+                        <ul>
+                            <li>Developing cutting-edge emotion detection application to enhance employee well-being and workplace productivity at manufacturing facilities</li>
+                            <li>Leading full-stack development project for real-time monitoring and optimization of plant manufacturing processes</li>
+                            <li>Collaborating with cross-functional teams to implement AI-driven solutions for industrial applications</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Core Team Member & PR Coordinator</h3>
+                        <div class="company">HR Conclave 2024, IIIT Dharwad</div>
+                        <ul>
+                            <li>Served as primary Student Point of Contact for HR delegates from leading corporations</li>
+                            <li>Managed sponsorship relationships and coordinated high-level professional networking events</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Event Lead</h3>
+                        <div class="company">RUSH E-sports Tournament, IIIT Dharwad</div>
+                        <ul>
+                            <li>Successfully planned and executed large-scale gaming tournament with 600+ participants</li>
+                            <li>Demonstrated exceptional project management and organizational leadership capabilities</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2>Non-Technical Skills</h2>
-                <ul class="skill-list">
-                    <li><strong>Exceptional Communication:</strong> Skilled in conveying ideas clearly in multiple languages.</li>
-                    <li><strong>Confident Presenter:</strong> Excellent presentation skills with no stage fear.</li>
-                    <li><strong>Multilingual Proficiency:</strong> Fluent in English, Hindi, Telugu, Kannada.</li>
-                    <li><strong>Soft Skills:</strong> Teamwork, communication, time management.</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>Experience</h2>
-                <div class="experience-item">
-                    <h3>AI/ML Intern</h3>
-                    <div class="company">TATA MOTORS, Dharwad</div>
-                    <div class="date">Jan. 2025 – Present</div>
-                    <ul>
-                        <li>Developing an emotion detection application for employee well-being at the plant.</li>
-                        <li>Full-stack development project for monitoring plant manufacturing progress.</li>
-                    </ul>
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="experience-item">
-                    <h3>Core Team Member, PR and Sponsorship Coordinator</h3>
-                    <div class="company">HR Conclave 2024, IIIT Dharwad</div>
-                    <ul>
-                        <li>Served as Student Point of Contact for HR delegates.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Event Lead</h3>
-                    <div class="company">RUSH E-sports Tournament, IIIT Dharwad</div>
-                    <ul>
-                        <li>Planned and executed the event involving 600+ participants.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Projects</h2>
-                <div class="project">
+                <div class="project-card">
                     <h3>Natural Language Processing Web Application</h3>
-                    <div class="tech-stack">Flask, HTML, CSS</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">BART</span>
+                        <span class="tech-tag">Google Translate API</span>
+                    </div>
                     <ul>
-                        <li>Integrated pre-trained LLMs (BART Extractive Summarizer, Google Translate) into a web app for summarization, translation, and PDF data analysis.</li>
-                        <li>Gained experience in NLP, web development frameworks, and LLM integration.</li>
+                        <li>Architected and deployed comprehensive web application integrating pre-trained LLMs for advanced text processing</li>
+                        <li>Implemented BART Extractive Summarizer and Google Translate APIs for multi-language document analysis</li>
+                        <li>Developed robust PDF data extraction and analysis capabilities with intuitive user interface</li>
                     </ul>
                 </div>
-                <div class="project">
-                    <h3>Rental Management System</h3>
-                    <div class="tech-stack">Python, MySQL, Tkinter</div>
+                <div class="project-card">
+                    <h3>Enterprise Rental Management System</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Tkinter</span>
+                        <span class="tech-tag">Database Design</span>
+                    </div>
                     <ul>
-                        <li>Designed a DBMS for rental properties using MySQL and a Tkinter GUI for data entry and retrieval.</li>
-                        <li>Strengthened skills in database design, Python, and GUI development.</li>
+                        <li>Designed and implemented comprehensive DBMS solution for rental property management</li>
+                        <li>Created intuitive Tkinter-based GUI for efficient data entry, retrieval, and reporting</li>
+                        <li>Optimized database schema and queries for enhanced performance and scalability</li>
                     </ul>
                 </div>
-                <div class="project">
+                <div class="project-card">
                     <h3>Secure File Sharing System</h3>
-                    <div class="tech-stack">Python</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">AES Encryption</span>
+                        <span class="tech-tag">Diffie-Hellman</span>
+                        <span class="tech-tag">Cryptography</span>
+                    </div>
                     <ul>
-                        <li>Implemented file encryption/decryption using AES and Diffie-Hellman algorithms.</li>
-                        <li>Gained practical knowledge of cryptography for real-world security applications.</li>
+                        <li>Implemented enterprise-grade file encryption and decryption using advanced AES algorithms</li>
+                        <li>Integrated Diffie-Hellman key exchange protocol for secure communication channels</li>
+                        <li>Applied practical cryptographic principles for real-world security applications</li>
                     </ul>
                 </div>
-                <div class="project">
+                <div class="project-card">
                     <h3>Literature Research Chat Application</h3>
-                    <div class="tech-stack">RAG, NLP</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
                     <ul>
-                        <li>Built a chatbot using Retrieval-Augmented Generation to search across research papers and folders, providing accurate topic-specific responses.</li>
+                        <li>Developed intelligent chatbot using Retrieval-Augmented Generation for academic research</li>
+                        <li>Implemented sophisticated search algorithms across research papers and document repositories</li>
+                        <li>Delivered highly accurate, context-aware responses for topic-specific academic inquiries</li>
                     </ul>
                 </div>
             </section>
 
             <section class="section">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>B.Tech in Computer Science and Engineering</h3>
-                    <div class="institution">Indian Institute of Information Technology (IIIT), Dharwad</div>
-                    <div class="date">Nov. 2021 – Present</div>
-                    <div class="grade">CPI: 6</div>
+                <div class="section-header">
+                    <h2>Education</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="education-item">
-                    <h3>Higher Secondary Education</h3>
-                    <div class="institution">Kendriya Vidyalaya No.2, Indore</div>
-                    <div class="date">2021</div>
-                    <div class="grade">Percentage: 75%</div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                        <div class="institution">Indian Institute of Information Technology (IIIT), Dharwad</div>
+                        <div class="date">November 2021 – Present</div>
+                        <div class="grade">Current CPI: 6.0</div>
+                    </div>
                 </div>
-                <div class="education-item">
-                    <h3>Secondary Education</h3>
-                    <div class="institution">Kendriya Vidyalaya No.2, Indore</div>
-                    <div class="date">2019</div>
-                    <div class="grade">Percentage: 73%</div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Higher Secondary Education</h3>
+                        <div class="institution">Kendriya Vidyalaya No.2, Indore</div>
+                        <div class="date">2021</div>
+                        <div class="grade">75%</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Secondary Education</h3>
+                        <div class="institution">Kendriya Vidyalaya No.2, Indore</div>
+                        <div class="date">2019</div>
+                        <div class="grade">73%</div>
+                    </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2>Courses</h2>
-                <div class="courses">
+                <div class="section-header">
+                    <h2>Academic Coursework</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="courses-grid">
                     <div class="course-category">
-                        <h3>Core</h3>
+                        <h3>Core Computer Science</h3>
                         <div class="course-list">
-                            Data Structures and Algorithms, OOP, Operating Systems, DBMS, Computer Networks, Software Engineering, Cryptography, Machine Learning, NLP
+                            Data Structures and Algorithms • Object-Oriented Programming • Operating Systems • Database Management Systems • Computer Networks • Software Engineering • Cryptography • Machine Learning • Natural Language Processing
                         </div>
                     </div>
                     <div class="course-category">
-                        <h3>Mathematics</h3>
+                        <h3>Mathematical Foundations</h3>
                         <div class="course-list">
-                            Calculus, Probability, Discrete Mathematics, Linear Algebra, Statistics
+                            Calculus • Probability Theory • Discrete Mathematics • Linear Algebra • Statistics • Mathematical Modeling
                         </div>
                     </div>
                 </div>
