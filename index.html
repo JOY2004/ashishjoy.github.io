@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish Joy Jonnakuti - Animated Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="portfolio-container">
+        <!-- Progress Bar -->
+        <div class="scroll-progress" id="scrollProgress"></div>
+        
+        <!-- Header Section -->
+        <header class="hero-section">
+            <div class="hero-background">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="profile-avatar animate-scale">
+                    <img src="public/profile.jpg" alt="Ashish Joy Jonnakuti" class="profile-image">
+                </div>
+                <div class="hero-text animate-fade-up">
+                    <p class="subtitle">Software Engineer</p>
+                    <h1 class="main-title">Ashish Joy Jonnakuti</h1>
+                    <div class="location">
+                        <span>📍</span>
+                        <span>Dharwad, Karnataka, India</span>
+                    </div>
+                </div>
+                
+                <div class="contact-links animate-fade-up-delay">
+                    <a href="tel:+919877368015" class="contact-btn">
+                        <span>📞</span>
+                        <span>+91 9877368015</span>
+                    </a>
+                    <a href="mailto:ashishjoyenjoy@gmail.com" class="contact-btn">
+                        <span>✉️</span>
+                        <span>ashishjoyenjoy@gmail.com</span>
+                    </a>
+                    <a href="#" class="contact-btn">
+                        <span>💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="contact-btn">
+                        <span>🔗</span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <div class="scroll-mouse"></div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">💻</div>
+                        <div class="stat-number" data-target="11">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">🛠️</div>
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Technologies Mastered</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Team Events Led</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Months Experience</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Professional Summary -->
+            <section class="section animate-on-scroll">
+                <div class="section-header">
+                    <h2>Professional Summary</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="summary-card">
+                    <p>Passionate Computer Science student at IIIT Dharwad with demonstrated expertise in software development, web technologies, and machine learning. Proven track record in full-stack development, natural language processing, and database management.</p>
+                </div>
+            </section>
+            
+            <!-- Skills Section -->
+            <section class="section animate-on-scroll">
+                <div class="section-header">
+                    <h2>Technical Expertise</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>55%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="55"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>React</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Machine Learning</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Full-Stack Development</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Database Management</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-categories">
+                        <div class="skill-category animate-on-scroll">
+                            <h3>Programming</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">C/C++</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="skill-category animate-on-scroll">
+                            <h3>Frontend</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React.js</span>
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">Tailwind CSS</span>
+                                <span class="skill-tag">Figma</span>
+                            </div>
+                        </div>
+                        <div class="skill-category animate-on-scroll">
+                            <h3>Database</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="skill-category animate-on-scroll">
+                            <h3>AI/ML</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">NLP</span>
+                                <span class="skill-tag">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="section animate-on-scroll">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-icon">🤖</div>
+                            <h3>Natural Language Processing Web Application</h3>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">BART</span>
+                            <span class="tech-tag">Google Translate API</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Architected comprehensive web application integrating pre-trained LLMs</li>
+                            <li>Implemented BART Extractive Summarizer and Google Translate APIs</li>
+                            <li>Developed robust PDF data extraction with intuitive UI</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-icon">🏢</div>
+                            <h3>Enterprise Rental Management System</h3>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Tkinter</span>
+                            <span class="tech-tag">Database Design</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Designed comprehensive DBMS solution for rental property management</li>
+                            <li>Created intuitive Tkinter-based GUI for efficient data operations</li>
+                            <li>Optimized database schema for enhanced performance</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-icon">🔒</div>
+                            <h3>Secure File Sharing System</h3>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AES Encryption</span>
+                            <span class="tech-tag">Diffie-Hellman</span>
+                            <span class="tech-tag">Cryptography</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Implemented enterprise-grade file encryption using AES algorithms</li>
+                            <li>Integrated Diffie-Hellman key exchange protocol</li>
+                            <li>Applied practical cryptographic principles for security</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-header">
+                            <div class="project-icon">💬</div>
+                            <h3>Literature Research Chat Application</h3>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Developed intelligent chatbot using Retrieval-Augmented Generation</li>
+                            <li>Implemented sophisticated search algorithms across research papers</li>
+                            <li>Delivered highly accurate, context-aware responses</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section animate-on-scroll">
+                <div class="cta-card">
+                    <h2>Let's Build Something Amazing Together</h2>
+                    <p>I'm always excited to work on innovative projects and collaborate with talented teams. Let's connect and explore opportunities!</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:ashishjoyenjoy@gmail.com" class="cta-btn primary">Get In Touch</a>
+                        <a href="#" class="cta-btn secondary">Download Resume</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
